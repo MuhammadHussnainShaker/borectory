@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import MovieCard from './MovieCard';
+import Popup from './Popup';
 
 import './App.css';
 import SearchIcon from './search.svg';
@@ -21,6 +22,8 @@ const App = () => {
 
     const [movies, setMovies] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [selectedMovie, setSelectedMovie] = useState(null);
 
     const searchMovies = async (title) => {
         const response = await fetch(`${API_URL}&s=${title}`);
@@ -32,6 +35,17 @@ const App = () => {
     useEffect( () => {
         searchMovies('movie');
     }, []);
+
+
+
+    const openPopup = (movie) => {
+        setSelectedMovie(movie);
+        setIsPopupOpen(true);
+    }
+    const closePopup = () => {
+        setSelectedMovie(null);
+        setIsPopupOpen(false);
+    }
 
     return (
         <div className='app'>
@@ -63,8 +77,13 @@ const App = () => {
                 ? (
                     <div className='container'>
                         {movies.map((movie) => (
+                            <button 
+                            key={movie.imdbID} 
+                            onClick={() => openPopup(movie)}
+                            className='button'>
                             <MovieCard movie = {movie} />
-                        ))}
+                            </button>
+                        ))} 
                     </div>
                 ) : (
                     <div className='empty'>
@@ -72,8 +91,8 @@ const App = () => {
                     </div>
                 )
             }
-
             
+            <Popup isOpen={isPopupOpen} onClose={closePopup} selectedMovie={selectedMovie} />
         </div>
     );
 }
