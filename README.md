@@ -1,3 +1,9 @@
+The main page credit goes to Javascript Mastery
+(https://www.youtube.com/watch?v=b9eMGE7QtTk&list=PPSV)
+The Popup functionality when clicked on a movie icon and reset input 
+functionality in search bar was created by me.
+![Popup functionality demonstration](image.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
