@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 The main page credit goes to Javascript Mastery\
 (https://www.youtube.com/watch?v=b9eMGE7QtTk&list=PPSV)\
 The Popup functionality when clicked on a movie icon and reset input\ 
-=======
-The main page credit goes to Javascript Mastery
-(https://www.youtube.com/watch?v=b9eMGE7QtTk&list=PPSV)
-The Popup functionality when clicked on a movie icon and reset input 
->>>>>>> 9f71f3fb711bbe814a8f2bbdbc63e4b522253f63
 functionality in search bar was created by me.
 ![Popup functionality demonstration](image.png)
 
