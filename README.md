@@ -1,5 +1,5 @@
 The main page credit goes to Javascript Mastery\
-(https://www.youtube.com/watch?v=b9eMGE7QtTk&list=PPSV).\
+(https://www.youtube.com/watch?v=b9eMGE7QtTk&list=PPSV) .\
 The Popup functionality when clicked on a movie icon and reset input functionality in search bar was created by me.
 ![Popup functionality demonstration](image.png)
 
