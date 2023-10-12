@@ -35,6 +35,17 @@ const App = () => {
     useEffect( () => {
         searchMovies('movie');
     }, []);
+    useEffect ( () => {
+        const handleEscapeKeyPress = (event) => {
+            if (event.key === 'Escape') {
+              closePopup();
+            }
+          };
+          window.addEventListener('keydown', handleEscapeKeyPress);
+          return () => {
+            window.removeEventListener('keydown', handleEscapeKeyPress)
+          };
+    }, []);
 
 
 
@@ -46,6 +57,11 @@ const App = () => {
         setSelectedMovie(null);
         setIsPopupOpen(false);
     }
+    const handleEnterKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            searchMovies(searchTerm);
+        }
+    }
 
     return (
         <div className='app'>
@@ -56,6 +72,7 @@ const App = () => {
                     placeholder='Search'
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
+                    onKeyPress={handleEnterKeyPress}
                 />
                 <img
                     src={SearchIcon}
