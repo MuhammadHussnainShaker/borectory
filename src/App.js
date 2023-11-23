@@ -16,7 +16,7 @@ import ResetIcon from './reset.svg';
 //         "Poster": "https://m.media-amazon.com/images/M/MV5BZWQxMjcwNjItZjI0ZC00ZTc4LWIwMzItM2Q0YTZhNzI3NzdlXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_SX300.jpg"
 // }
 
-const API_URL = 'http://omdbapi.com?apikey=fbfb027d';
+const API_URL = 'https://omdbapi.com?apikey=fbfb027d';
 
 const App = () => {
 
