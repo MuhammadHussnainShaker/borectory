@@ -41,7 +41,7 @@ h1 {
 }
 
 .search {
-  width: 71%;
+  width: 711%;
   margin: 4rem 0 2rem;
 
   display: flex;
@@ -51,8 +51,12 @@ h1 {
   padding: 1.5rem 1.75rem;
   border-radius: 3rem;
   background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  -webkit-box-shadow:
+    5px 5px 7px #1c1d1f,
+    -5px -5px 7px #222527;
+  box-shadow:
+    5px 5px 7px #1c1d1f,
+    -5px -5px 7px #222527;
 }
 
 .search input {
@@ -283,8 +287,6 @@ h1 {
   justify-content: center;
   align-items: center;
   flex: 0 0 400px;
- 
-
 }
 
 .poster-popup img {
@@ -304,49 +306,47 @@ h1 {
   padding-top: 40px;
 }
 
-.details-popup h2{
+.details-popup h2 {
   margin-top: 5px;
   font-family: "Roboto Slab", serif;
   color: #f9d3b4;
 }
 
-.details-popup h3{
+.details-popup h3 {
   align-self: start;
   margin-top: 10px;
   font-family: "Roboto Slab", serif;
   color: #f9d3b4;
 }
 
-.details-popup p:nth-of-type(1){
+.details-popup p:nth-of-type(1) {
   margin-top: 5px;
   font-family: "Roboto Slab", serif;
   text-transform: capitalize;
   color: #f0f0f0;
 }
 
-.details-popup p:nth-of-type(2){
+.details-popup p:nth-of-type(2) {
   margin-top: 5px;
   font-family: "Roboto Slab", serif;
   color: #f9d3b4;
 }
 
-.details-popup p:nth-of-type(3){
+.details-popup p:nth-of-type(3) {
   margin-top: 5px;
   font-family: "Roboto Slab", serif;
   font-size: 14px;
   color: #f0f0f0;
 }
 
-
 @media screen and (max-width: 900px) {
- 
   .popup-content {
     background: #1f2123;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
- 
+
   .movie-popup {
     width: 500px;
     height: 356px;
@@ -360,7 +360,6 @@ h1 {
   .poster-popup img {
     width: 242px;
     height: 360px;
-
   }
 
   .details-popup {
@@ -368,17 +367,16 @@ h1 {
     padding-top: 0px;
   }
 
-  .details-popup h3{
+  .details-popup h3 {
     margin-top: 0px;
   }
-  
-  .details-popup h2{
+
+  .details-popup h2 {
     margin-top: 0px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  
   .movie-popup {
     flex-direction: column;
     text-align: center;
@@ -386,7 +384,8 @@ h1 {
     height: 700px;
   }
 
-  .poster-popup, .movie-popup {
+  .poster-popup,
+  .movie-popup {
     flex: none;
     padding: 0;
   }
@@ -394,14 +393,13 @@ h1 {
   .details-popup p:nth-of-type(3) {
     text-align: left;
   }
-} 
+}
 
 @media screen and (max-width: 400px) {
-
   .popup-content {
     margin-top: 90px;
   }
-  
+
   .movie-popup {
     flex-direction: column;
     text-align: center;
@@ -409,7 +407,8 @@ h1 {
     height: 670px;
   }
 
-  .poster-popup, .movie-popup {
+  .poster-popup,
+  .movie-popup {
     flex: none;
     padding: 0;
   }
@@ -417,7 +416,6 @@ h1 {
   .details-popup p:nth-of-type(3) {
     text-align: left;
   }
-
 }
 
 /* CSS for popup ends here */
