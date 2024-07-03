@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react"
 
 const MovieCard = ({ movie }) => {
+console.log(movie);
+
   const [thumbnailUrl, setThumbnailUrl] = useState(
     "https://via.placeholder.com/400"
   )
 
   useEffect(() => {
     const loadImage = async () => {
-      const url = movie.volumeInfo.imageLinks?.thumbnail
+      const url = movie?.volumeInfo?.imageLinks?.thumbnail
 
       if (!url) {
         setThumbnailUrl("https://via.placeholder.com/400")
@@ -38,16 +40,16 @@ const MovieCard = ({ movie }) => {
   return (
     <div className="movie">
       <div>
-        <p>{movie.volumeInfo.publishedDate}</p>
+        <p>{movie?.volumeInfo?.publishedDate}</p>
       </div>
 
       <div>
-        <img src={thumbnailUrl} alt={movie.volumeInfo.title || "Book Title"} />
+        <img src={thumbnailUrl} alt={movie?.volumeInfo?.title || "Book Title"} />
       </div>
 
       <div>
-        <span>{movie.volumeInfo.printType}</span>
-        <h3>{movie.volumeInfo.title}</h3>
+        <span>{movie?.volumeInfo?.printType}</span>
+        <h3>{movie?.volumeInfo?.title}</h3>
       </div>
     </div>
   )

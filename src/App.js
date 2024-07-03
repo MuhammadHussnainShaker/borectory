@@ -134,7 +134,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Movies Directory</h1>
+      <h1>Borectory - The Books Directory</h1>
 
       <div className="search">
         <input
