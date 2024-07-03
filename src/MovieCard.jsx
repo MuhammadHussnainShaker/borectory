@@ -1,22 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react"
 
 const MovieCard = ({ movie }) => {
-    return (
-        <div className='movie'>
-            <div>
-                <p>{movie.Year}</p>
-            </div>
+  const [thumbnailUrl, setThumbnailUrl] = useState(
+    "https://via.placeholder.com/400"
+  )
 
-            <div>
-                <img src={movie.Poster  !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/400'} alt='{movie.Title}'/>
-            </div>
+  useEffect(() => {
+    const loadImage = async () => {
+      const url = movie.volumeInfo.imageLinks?.thumbnail
 
-            <div>
-                <span>{movie.Type}</span>
-                <h3>{movie.Title}</h3>
-            </div>
-        </div>
-    );
+      if (!url) {
+        setThumbnailUrl("https://via.placeholder.com/400")
+        return
+      }
+
+      const img = new Image()
+      img.src = url.slice(0, 79)
+
+      img.onload = () => {
+        if (img.height === 750) {
+          setThumbnailUrl(url)
+        } else if (img.height > 250) {
+          setThumbnailUrl(url.slice(0, 79))
+        } else {
+          setThumbnailUrl(url)
+        }
+      }
+
+      img.onerror = () => {
+        setThumbnailUrl("https://via.placeholder.com/400")
+      }
+    }
+
+    loadImage()
+  }, [movie])
+
+  return (
+    <div className="movie">
+      <div>
+        <p>{movie.volumeInfo.publishedDate}</p>
+      </div>
+
+      <div>
+        <img src={thumbnailUrl} alt={movie.volumeInfo.title || "Book Title"} />
+      </div>
+
+      <div>
+        <span>{movie.volumeInfo.printType}</span>
+        <h3>{movie.volumeInfo.title}</h3>
+      </div>
+    </div>
+  )
 }
 
-export default MovieCard;
+export default MovieCard
