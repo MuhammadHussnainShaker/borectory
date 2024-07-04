@@ -101,6 +101,17 @@ const App = () => {
         </div>
       )}
 
+      <footer>
+        Made with React and <span>❤</span> by Muhammad Hussnain Shaker{" "}
+        <a
+          href="https://github.com/MuhammadHussnainShaker"
+          target="_blank"
+          rel="noreferrer"
+        >
+          [GitHub]
+        </a>
+      </footer>
+
       <Popup
         isOpen={isPopupOpen}
         onClose={closePopup}

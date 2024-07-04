@@ -455,4 +455,13 @@ h1 {
 
 }
 
+footer, footer > a {
+  color: #f9d3b4;
+  margin-top: 30px;
+}
+
+footer > span {
+  color: red;
+}
+
 /* CSS for popup ends here */
