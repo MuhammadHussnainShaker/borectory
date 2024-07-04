@@ -115,7 +115,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-.movie {
+.book {
   width: 310px;
   height: 460px;
   margin: 1.5rem;
@@ -137,7 +137,7 @@ h1 {
   cursor: pointer;
 }
 
-.movie div:nth-of-type(1) {
+.book div:nth-of-type(1) {
   position: absolute;
   padding: 16px;
   width: 100%;
@@ -146,22 +146,22 @@ h1 {
   color: #f9d3b4;
 }
 
-.movie:hover {
+.book:hover {
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
   transform: scale(1.05, 1.05);
 }
 
-.movie div:nth-of-type(2) {
+.book div:nth-of-type(2) {
   width: 100%;
   height: 100%;
 }
 
-.movie div:nth-of-type(2) img {
+.book div:nth-of-type(2) img {
   height: 100%;
   width: 100%;
 }
 
-.movie div:nth-of-type(3) {
+.book div:nth-of-type(3) {
   z-index: 2;
   background-color: #343739;
   padding: 16px 24px 24px 24px;
@@ -172,7 +172,7 @@ h1 {
   left: 0;
 }
 
-.movie div:nth-of-type(3) span {
+.book div:nth-of-type(3) span {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-size: 13px;
@@ -181,22 +181,22 @@ h1 {
   color: #f0f0f0;
 }
 
-.movie div:nth-of-type(3) h3 {
+.book div:nth-of-type(3) h3 {
   margin-top: 5px;
   font-family: "Roboto Slab", serif;
   color: #f9d3b4;
 }
 
-.movie:hover div:nth-of-type(2) {
+.book:hover div:nth-of-type(2) {
   height: 100%;
   opacity: 0.3;
 }
 
-.movie:hover div:nth-of-type(3) {
+.book:hover div:nth-of-type(3) {
   background-color: transparent;
 }
 
-.movie:hover div:nth-of-type(1) {
+.book:hover div:nth-of-type(1) {
   opacity: 1;
 }
 
@@ -233,7 +233,7 @@ h1 {
     margin-top: 2rem;
   }
 
-  .movie {
+  .book {
     width: "100%";
     margin: 1rem;
   }
@@ -269,7 +269,7 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.movie-popup {
+.book-popup {
   display: flex;
   align-items: center;
   position: relative;
@@ -382,7 +382,7 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
  
-  .movie-popup {
+  .book-popup {
     width: 500px;
     height: 356px;
   }
@@ -414,14 +414,14 @@ h1 {
 
 @media screen and (max-width: 600px) {
   
-  .movie-popup {
+  .book-popup {
     flex-direction: column;
     text-align: center;
     width: 250px;
     height: 700px;
   }
 
-  .poster-popup, .movie-popup {
+  .poster-popup, .book-popup {
     flex: none;
     padding: 0;
   }
@@ -437,14 +437,14 @@ h1 {
     margin-top: 90px;
   }
   
-  .movie-popup {
+  .book-popup {
     flex-direction: column;
     text-align: center;
     width: 270px;
     height: 670px;
   }
 
-  .poster-popup, .movie-popup {
+  .poster-popup, .book-popup {
     flex: none;
     padding: 0;
   }

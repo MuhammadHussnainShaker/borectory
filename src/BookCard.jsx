@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-const MovieCard = ({ movie }) => {
-console.log(movie);
+const BookCard = ({ book }) => {
 
   const [thumbnailUrl, setThumbnailUrl] = useState(
     "https://via.placeholder.com/400"
@@ -9,7 +8,7 @@ console.log(movie);
 
   useEffect(() => {
     const loadImage = async () => {
-      const url = movie?.volumeInfo?.imageLinks?.thumbnail
+      const url = book?.volumeInfo?.imageLinks?.thumbnail
 
       if (!url) {
         setThumbnailUrl("https://via.placeholder.com/400")
@@ -35,24 +34,24 @@ console.log(movie);
     }
 
     loadImage()
-  }, [movie])
+  }, [book])
 
   return (
-    <div className="movie">
+    <div className="book">
       <div>
-        <p>{movie?.volumeInfo?.publishedDate}</p>
+        <p>{book?.volumeInfo?.publishedDate}</p>
       </div>
 
       <div>
-        <img src={thumbnailUrl} alt={movie?.volumeInfo?.title || "Book Title"} />
+        <img src={thumbnailUrl} alt={book?.volumeInfo?.title || "Book Title"} />
       </div>
 
       <div>
-        <span>{movie?.volumeInfo?.printType}</span>
-        <h3>{movie?.volumeInfo?.title}</h3>
+        <span>{book?.volumeInfo?.printType}</span>
+        <h3>{book?.volumeInfo?.title}</h3>
       </div>
     </div>
   )
 }
 
-export default MovieCard
+export default BookCard

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react"
 import ResetIcon from "./reset.svg"
 
-const Popup = ({ isOpen, onClose, selectedMovie }) => {
-  console.log(selectedMovie)
+const Popup = ({ isOpen, onClose, selectedBook }) => {
 
   const [thumbnailUrl, setThumbnailUrl] = useState(
     "https://via.placeholder.com/400"
@@ -10,7 +9,7 @@ const Popup = ({ isOpen, onClose, selectedMovie }) => {
 
   useEffect(() => {
     const loadImage = async () => {
-      const url = selectedMovie?.volumeInfo?.imageLinks?.thumbnail
+      const url = selectedBook?.volumeInfo?.imageLinks?.thumbnail
 
       if (!url) {
         setThumbnailUrl("https://via.placeholder.com/400")
@@ -36,9 +35,9 @@ const Popup = ({ isOpen, onClose, selectedMovie }) => {
     }
 
     loadImage()
-  }, [selectedMovie])
+  }, [selectedBook])
 
-  if (!isOpen || !selectedMovie) return null
+  if (!isOpen || !selectedBook) return null
 
   return (
     <div className="popup">
@@ -49,53 +48,53 @@ const Popup = ({ isOpen, onClose, selectedMovie }) => {
           alt="reset"
           onClick={onClose}
         />
-        <div className="movie-popup">
+        <div className="book-popup">
           <div className="poster-popup">
             <img
               className="poster-img-popup"
               src={thumbnailUrl}
-              alt={selectedMovie?.volumeInfo?.title || "Book Title"}
+              alt={selectedBook?.volumeInfo?.title || "Book Title"}
             />
           </div>
           <div className="details-popup">
-            <h2>{selectedMovie?.Title}</h2>
-            {selectedMovie?.volumeInfo?.printType !== undefined ? (
+            <h2>{selectedBook?.Title}</h2>
+            {selectedBook?.volumeInfo?.printType !== undefined ? (
               <>
                 <h3>Type: </h3>
-                <p>{selectedMovie?.volumeInfo?.printType}</p>
+                <p>{selectedBook?.volumeInfo?.printType}</p>
               </>
             ) : null}
-            {selectedMovie?.volumeInfo?.authors[0] !== undefined ? (
+            {selectedBook?.volumeInfo?.authors[0] !== undefined ? (
               <>
                 <h3>Author: </h3>
-                <p>{selectedMovie?.volumeInfo?.authors[0]}</p>
+                <p>{selectedBook?.volumeInfo?.authors[0]}</p>
               </>
             ) : null}
-            {selectedMovie?.volumeInfo?.publishedDate !== undefined ? (
+            {selectedBook?.volumeInfo?.publishedDate !== undefined ? (
               <>
                 <h3>Published: </h3>
-                <p>{selectedMovie?.volumeInfo?.publishedDate}</p>
+                <p>{selectedBook?.volumeInfo?.publishedDate}</p>
               </>
             ) : null}
-            {selectedMovie?.volumeInfo.publisher !== undefined ? (
+            {selectedBook?.volumeInfo.publisher !== undefined ? (
               <>
                 <h3>Publisher: </h3>
-                <p>{selectedMovie?.volumeInfo?.publisher}</p>
+                <p>{selectedBook?.volumeInfo?.publisher}</p>
               </>
             ) : null}
             <h3>Description:</h3>
             <p>
               {`${
-                selectedMovie?.volumeInfo?.subtitle !== undefined
-                  ? selectedMovie?.volumeInfo?.subtitle
-                  : selectedMovie?.volumeInfo?.description.slice(0, 79)
+                selectedBook?.volumeInfo?.subtitle !== undefined
+                  ? selectedBook?.volumeInfo?.subtitle
+                  : selectedBook?.volumeInfo?.description.slice(0, 79)
               } ...`}
             </p>
             <button className="popup-btn">
               <a
                 target="_blank"
                 rel="noreferrer"
-                href={selectedMovie?.volumeInfo?.infoLink}
+                href={selectedBook?.volumeInfo?.infoLink}
               >
                 <span>Read More on Google Books</span>
               </a>
